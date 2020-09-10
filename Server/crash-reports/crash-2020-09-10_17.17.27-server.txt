@@ -1,0 +1,260 @@
+---- Minecraft Crash Report ----
+// You should try our sister game, Minceraft!
+
+Time: 10.09.20 17:17
+Description: Watching Server
+
+java.lang.Error
+	at bru.a(SourceFile:209)
+	at brw.a(SourceFile:128)
+	at bru.d(SourceFile:204)
+	at bru.d_(SourceFile:408)
+	at brm.a(SourceFile:262)
+	at aag.a(SourceFile:1027)
+	at bru.a(SourceFile:573)
+	at bct.k(SourceFile:100)
+	at bct.j(SourceFile:88)
+	at aag.a(SourceFile:616)
+	at aag$$Lambda$3488/951835172.accept(Unknown Source)
+	at bru.a(SourceFile:561)
+	at aag.a(SourceFile:406)
+	at net.minecraft.server.MinecraftServer.b(SourceFile:868)
+	at zg.b(SourceFile:303)
+	at net.minecraft.server.MinecraftServer.a(SourceFile:808)
+	at net.minecraft.server.MinecraftServer.w(SourceFile:667)
+	at net.minecraft.server.MinecraftServer.a(SourceFile:254)
+	at net.minecraft.server.MinecraftServer$$Lambda$3237/532398393.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server Watchdog
+Stacktrace:
+	at bru.a(SourceFile:209)
+	at brw.a(SourceFile:128)
+	at bru.d(SourceFile:204)
+	at bru.d_(SourceFile:408)
+	at brm.a(SourceFile:262)
+	at aag.a(SourceFile:1027)
+	at bru.a(SourceFile:573)
+	at bct.k(SourceFile:100)
+	at bct.j(SourceFile:88)
+	at aag.a(SourceFile:616)
+	at aag$$Lambda$3488/951835172.accept(Unknown Source)
+	at bru.a(SourceFile:561)
+	at aag.a(SourceFile:406)
+	at net.minecraft.server.MinecraftServer.b(SourceFile:868)
+	at zg.b(SourceFile:303)
+	at net.minecraft.server.MinecraftServer.a(SourceFile:808)
+	at net.minecraft.server.MinecraftServer.w(SourceFile:667)
+	at net.minecraft.server.MinecraftServer.a(SourceFile:254)
+
+-- Thread Dump --
+Details:
+	Threads: "Worker-Main-16" Id=39 TIMED_WAITING on java.util.concurrent.ForkJoinPool@31b681a
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.ForkJoinPool@31b681a
+	at java.util.concurrent.ForkJoinPool.awaitWork(Unknown Source)
+	at java.util.concurrent.ForkJoinPool.runWorker(Unknown Source)
+	at java.util.concurrent.ForkJoinWorkerThread.run(Unknown Source)
+
+
+"Worker-Main-15" Id=38 WAITING on java.util.concurrent.ForkJoinPool@31b681a
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.ForkJoinPool@31b681a
+	at java.util.concurrent.ForkJoinPool.awaitWork(Unknown Source)
+	at java.util.concurrent.ForkJoinPool.runWorker(Unknown Source)
+	at java.util.concurrent.ForkJoinWorkerThread.run(Unknown Source)
+
+
+"Worker-Main-13" Id=36 WAITING on java.util.concurrent.ForkJoinPool@31b681a
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.ForkJoinPool@31b681a
+	at java.util.concurrent.ForkJoinPool.awaitWork(Unknown Source)
+	at java.util.concurrent.ForkJoinPool.runWorker(Unknown Source)
+	at java.util.concurrent.ForkJoinWorkerThread.run(Unknown Source)
+
+
+"Netty Server IO #2" Id=35 RUNNABLE (in native)
+	at sun.nio.ch.WindowsSelectorImpl$SubSelector.poll0(Native Method)
+	at sun.nio.ch.WindowsSelectorImpl$SubSelector.poll(Unknown Source)
+	at sun.nio.ch.WindowsSelectorImpl$SubSelector.access$400(Unknown Source)
+	at sun.nio.ch.WindowsSelectorImpl.doSelect(Unknown Source)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(Unknown Source)
+	-  locked io.netty.channel.nio.SelectedSelectionKeySet@ddc9609
+	-  locked java.util.Collections$UnmodifiableSet@9e3036a
+	-  locked sun.nio.ch.WindowsSelectorImpl@4ce19c32
+	at sun.nio.ch.SelectorImpl.select(Unknown Source)
+	at io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:62)
+	at io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:756)
+	...
+
+
+"Netty Server IO #1" Id=34 RUNNABLE (in native)
+	at sun.nio.ch.WindowsSelectorImpl$SubSelector.poll0(Native Method)
+	at sun.nio.ch.WindowsSelectorImpl$SubSelector.poll(Unknown Source)
+	at sun.nio.ch.WindowsSelectorImpl$SubSelector.access$400(Unknown Source)
+	at sun.nio.ch.WindowsSelectorImpl.doSelect(Unknown Source)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(Unknown Source)
+	-  locked io.netty.channel.nio.SelectedSelectionKeySet@1462660c
+	-  locked java.util.Collections$UnmodifiableSet@7d67d657
+	-  locked sun.nio.ch.WindowsSelectorImpl@6c0e72c2
+	at sun.nio.ch.SelectorImpl.select(Unknown Source)
+	at io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:62)
+	at io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:756)
+	...
+
+
+"Server Watchdog" Id=32 RUNNABLE
+	at sun.management.ThreadImpl.dumpThreads0(Native Method)
+	at sun.management.ThreadImpl.dumpAllThreads(Unknown Source)
+	at zj.run(SourceFile:45)
+	at java.lang.Thread.run(Unknown Source)
+
+
+"Netty Server IO #0" Id=26 RUNNABLE (in native)
+	at sun.nio.ch.WindowsSelectorImpl$SubSelector.poll0(Native Method)
+	at sun.nio.ch.WindowsSelectorImpl$SubSelector.poll(Unknown Source)
+	at sun.nio.ch.WindowsSelectorImpl$SubSelector.access$400(Unknown Source)
+	at sun.nio.ch.WindowsSelectorImpl.doSelect(Unknown Source)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(Unknown Source)
+	-  locked io.netty.channel.nio.SelectedSelectionKeySet@2cce637d
+	-  locked java.util.Collections$UnmodifiableSet@2b9b32ee
+	-  locked sun.nio.ch.WindowsSelectorImpl@680d8ca4
+	at sun.nio.ch.SelectorImpl.select(Unknown Source)
+	at io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:62)
+	at io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:756)
+	...
+
+
+"ObjectCleanerThread" Id=25 TIMED_WAITING on java.lang.ref.ReferenceQueue$Lock@770a7b05
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.lang.ref.ReferenceQueue$Lock@770a7b05
+	at java.lang.ref.ReferenceQueue.remove(Unknown Source)
+	at io.netty.util.internal.ObjectCleaner$1.run(ObjectCleaner.java:54)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Unknown Source)
+
+
+"Server console handler" Id=24 RUNNABLE (in native)
+	at java.io.FileInputStream.readBytes(Native Method)
+	at java.io.FileInputStream.read(Unknown Source)
+	at java.io.BufferedInputStream.read1(Unknown Source)
+	at java.io.BufferedInputStream.read(Unknown Source)
+	-  locked java.io.BufferedInputStream@28803b12
+	at sun.nio.cs.StreamDecoder.readBytes(Unknown Source)
+	at sun.nio.cs.StreamDecoder.implRead(Unknown Source)
+	at sun.nio.cs.StreamDecoder.read(Unknown Source)
+	-  locked java.io.InputStreamReader@5a7e60ae
+	at java.io.InputStreamReader.read(Unknown Source)
+	...
+
+
+"DestroyJavaVM" Id=23 RUNNABLE
+
+
+"Server thread" Id=20 RUNNABLE
+	at bru.a(SourceFile:209)
+	at brw.a(SourceFile:128)
+	at bru.d(SourceFile:204)
+	at bru.d_(SourceFile:408)
+	at brm.a(SourceFile:262)
+	at aag.a(SourceFile:1027)
+	at bru.a(SourceFile:573)
+	at bct.k(SourceFile:100)
+	...
+
+
+"Snooper Timer" Id=21 WAITING on java.util.TaskQueue@5e12afe9
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.util.TaskQueue@5e12afe9
+	at java.lang.Object.wait(Unknown Source)
+	at java.util.TimerThread.mainLoop(Unknown Source)
+	at java.util.TimerThread.run(Unknown Source)
+
+
+"Timer hack thread" Id=16 TIMED_WAITING
+	at java.lang.Thread.sleep(Native Method)
+	at x$6.run(SourceFile:636)
+
+
+"Worker-Bootstrap-3" Id=15 RUNNABLE
+	at java.util.Objects.equals(Unknown Source)
+	at com.mojang.datafixers.functions.Functions.comp(Functions.java:21)
+	at com.mojang.datafixers.functions.Comp.lambda$one$2(Comp.java:43)
+	at com.mojang.datafixers.functions.Comp$$Lambda$1124/1307177910.apply(Unknown Source)
+	at java.util.Optional.map(Unknown Source)
+	at com.mojang.datafixers.functions.Comp.one(Comp.java:43)
+	at com.mojang.datafixers.functions.PointFreeRule$One.rewrite(PointFreeRule.java:651)
+	at com.mojang.datafixers.functions.PointFreeRule$OrElse.rewrite(PointFreeRule.java:571)
+	...
+
+
+"Worker-Bootstrap-2" Id=14 WAITING on java.util.concurrent.CompletableFuture$Signaller@7a64257d
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.CompletableFuture$Signaller@7a64257d
+	at java.util.concurrent.locks.LockSupport.park(Unknown Source)
+	at java.util.concurrent.CompletableFuture$Signaller.block(Unknown Source)
+	at java.util.concurrent.ForkJoinPool.managedBlock(Unknown Source)
+	at java.util.concurrent.CompletableFuture.waitingGet(Unknown Source)
+	at java.util.concurrent.CompletableFuture.join(Unknown Source)
+	at com.mojang.datafixers.types.Type.rewrite(Type.java:196)
+	at com.mojang.datafixers.DataFixerBuilder.lambda$build$1(DataFixerBuilder.java:73)
+	...
+
+
+"Worker-Bootstrap-1" Id=13 RUNNABLE
+	at com.mojang.datafixers.functions.PointFreeRule$One.rewrite(PointFreeRule.java:651)
+	at com.mojang.datafixers.functions.PointFreeRule$OrElse.rewrite(PointFreeRule.java:571)
+	at com.mojang.datafixers.functions.Apply.one(Apply.java:45)
+	at com.mojang.datafixers.functions.PointFreeRule$One.rewrite(PointFreeRule.java:651)
+	at com.mojang.datafixers.functions.PointFreeRule$OrElse.rewrite(PointFreeRule.java:571)
+	at com.mojang.datafixers.functions.Comp.one(Comp.java:43)
+	at com.mojang.datafixers.functions.PointFreeRule$One.rewrite(PointFreeRule.java:651)
+	at com.mojang.datafixers.functions.PointFreeRule$OrElse.rewrite(PointFreeRule.java:571)
+	...
+
+
+"Attach Listener" Id=5 RUNNABLE
+
+
+"Signal Dispatcher" Id=4 RUNNABLE
+
+
+"Finalizer" Id=3 WAITING on java.lang.ref.ReferenceQueue$Lock@5395c988
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.lang.ref.ReferenceQueue$Lock@5395c988
+	at java.lang.ref.ReferenceQueue.remove(Unknown Source)
+	at java.lang.ref.ReferenceQueue.remove(Unknown Source)
+	at java.lang.ref.Finalizer$FinalizerThread.run(Unknown Source)
+
+
+"Reference Handler" Id=2 WAITING on java.lang.ref.Reference$Lock@7a47a844
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.lang.ref.Reference$Lock@7a47a844
+	at java.lang.Object.wait(Unknown Source)
+	at java.lang.ref.Reference$ReferenceHandler.run(Unknown Source)
+
+
+
+Stacktrace:
+	at zj.run(SourceFile:61)
+	at java.lang.Thread.run(Unknown Source)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.16.2
+	Minecraft Version ID: 1.16.2
+	Operating System: Windows 8.1 (amd64) version 6.3
+	Java Version: 1.8.0_51, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 534416120 bytes (509 MB) / 1070071808 bytes (1020 MB) up to 1070071808 bytes (1020 MB)
+	CPUs: 4
+	JVM Flags: 2 total; -Xmx1024M -Xms1024M
+	Player Count: 1 / 20; [aah['Seafoodd'/4690, l='ServerLevel[world]', x=243.34, y=78.97, z=-79.19]]
+	Data Packs: vanilla
+	Is Modded: Unknown (can't tell)
+	Type: Dedicated Server (map_server.txt)
